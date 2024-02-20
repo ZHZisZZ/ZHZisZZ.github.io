@@ -2,6 +2,10 @@
 <html>
 
 <head>
+  <!-- mathjax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-7P13JJWZ21"></script>
   <script>
@@ -55,7 +59,6 @@
 
 <body>
 
-
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
@@ -74,7 +77,7 @@
               <span class="author-block">
                 <a href="https://liujiaheng.github.io/" target="_blank">Jiaheng Liu</a>,
               </span>
-              <a href='https://scholar.google.com/citations?user=5KRbHPMAAAAJ&hl=zh-CN' target='_blank'>Chao Yang</a>
+              <a href='https://scholar.google.com/citations?user=5KRbHPMAAAAJ&hl=zh-CN' target='_blank'>Chao Yang</a>,
               <!-- </br> -->
               <span class="author-block">
                 <a href="https://wlouyang.github.io/" target="_blank">Wanli Ouyang</a>,
@@ -146,49 +149,17 @@
     </div>
   </section>
 
-  <!--
-<video poster="" id="tree" autoplay controls muted loop height="100%">
 
-  <source src="static/videos/banner_video.mp4"
-  type="video/mp4">
-</video>
--->
 
-  <!-- Teaser video-->
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <div style="display: flex; justify-content: center; align-items: center;">
-          <img width="450px" src="static/images/fig1-2.png" alt="cmp" />
-        </div>
-      </div>
-
-      <div class="hero-body">
-        <h2 class="subtitle has-text-centered">
-          <span><b>Emualted Disalignment (ED)</b> exposes
-            the latent risks within each pre-trained </br> and safety-aligned model pair, simply by combining them at
-            inference time.</span>
-        </h2>
-      </div>
-    </div>
-  </section>
-
-  <!-- End teaser video -->
-
-<!--   <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <iframe
-          src="https://csuhan-onellm.hf.space"
-          frameborder="0"
-          width="1024"
-          height="450"
-        ></iframe>
-      </div>
-    </div>
-  </section>
-   -->
-    
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <img width="600px" src="static/images/teaser.png" alt="cmp" />
+    <!-- <img width="450px" src="static/images/fig1-2.png" alt="cmp" /> -->
+  </div>
+  <h2 class="subtitle has-text-centered">
+    <span><b>Emualted Disalignment (ED)</b> exposes
+      the latent risks within each pre-trained </br> and safety-aligned model pair, simply by combining them at
+      inference time.</span>
+  </h2>
 
   <!-- Paper abstract -->
   <section class="section hero ">
@@ -214,9 +185,9 @@ strong baselines, achieving <span><b>the highest harmful rate</b> in 43 out of 4
   </section>
   <!-- End paper abstract -->
 
-  <div class="columns is-centered has-text-centered">
+  <!-- <div class="columns is-centered has-text-centered">
     <HR align=center style="border:3 double #000000" width="80%" SIZE=5>
-  </div>
+  </div> -->
 
   <section class="section hero">
     <div class="container is-max-desktop">
@@ -224,12 +195,23 @@ strong baselines, achieving <span><b>the highest harmful rate</b> in 43 out of 4
         <div class="column is-four-fifths">
           <h2 class="title is-3">Method</h2>
           <div class="content has-text-justified">
-            <img src="static/images/fig1.png" alt="MY ALT TEXT" />
-
+            <!-- <img src="static/images/fig1.png" alt="MY ALT TEXT" /> -->
             <p>
-              An illustration of <b>emulated disalignment (ED)</b>, where x, y represent user query and language model response; π_base represents a pre-trained model (e.g. Llama-2) and πalign represents its
-safety-aligned version (e.g. Llama-2-chat); α is a positive hyperparameter
+            Here is an illustration of <b>emulated disalignment (ED)</b>, where x, y represent user query and language model response; \(\pi_{\text{base}}\) represents a pre-trained model (e.g. Llama-2) and \(\pi_{\text{align}}\) represents its
+safety-aligned version (e.g. Llama-2-chat); \(\alpha\) is a positive hyperparameter:
             </p>
+            <div style="display: flex; justify-content: center; align-items: center;">
+              <img width="900px" src="static/images/illustration-1.png" alt="cmp" />
+            </div>
+            <p>
+            <b>(a) What ED emulates:</b> as \(\log \pi_{\text{align}} - \log \pi_{\text{base}}\) represents a reward model that encourages safety,  adversarially training a language model to minimize (note the negative sign) this reward model with KL constraint produces a harmful language model \(\pi_{\text{disalign}}\).
+            </p>
+            <div style="display: flex; justify-content: center; align-items: center;">
+              <img width="900px" src="static/images/illustration-2.png" alt="cmp" />
+            </div>
+            <p>
+            <b>(b) What ED actually does:</b> instead of relying on resource-heavy training, ED emulates the results of such adversarial fine-tuning by sampling from a contrastive distribution defined jointly by \(\pi_{\text{base}}\) and \(\pi_{\text{align}}\).
+           </p>
           </div>
         </div>
       </div>
@@ -237,9 +219,9 @@ safety-aligned version (e.g. Llama-2-chat); α is a positive hyperparameter
   </section>
 
 
-  <div class="columns is-centered has-text-centered">
+  <!-- <div class="columns is-centered has-text-centered">
     <HR align=center style="border:3 double #000000" width="80%" SIZE=5>
-  </div>
+  </div> -->
 
 
   <!-- Result -->
@@ -247,14 +229,14 @@ safety-aligned version (e.g. Llama-2-chat); α is a positive hyperparameter
   <section class="section hero ">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
-        <div class="column is-12">
+        <div class="column is-four-fifths">
           <h2 class="title is-3">Experiment</h2>
           <div class="content has-text-justified">
             <p>
               Harmful rate (%) of language model responses, where OM and LG represent the evaluation results by openai-moderation and Llama-guard respectively. The <b>emulated disaligned models</b> consistently generate harmful responses, achieving the highest harmful rate in the majority of evaluation subsets (43 out of 48).
             </p>
             <div style="text-align:center;">
-              <img src="static/images/table1.png" alt="MY ALT TEXT" />
+              <img width="1200" src="static/images/table1.png" alt="MY ALT TEXT" />
             </div>
           </div>
 
@@ -272,14 +254,20 @@ safety-aligned version (e.g. Llama-2-chat); α is a positive hyperparameter
   <section class="section hero ">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
-        <div class="column is-12">
+        <div class="column is-four-fifths">
           <h2 class="title is-3">Qualitative Results.</h2>
-          <div class="content has-text-justified">
-          </div>
           <p style="color: red">Warning: This section contains samples that may be offensive or harmful.</p>
-          <img width="600px" src="static/images/fig3.png" alt="cmp" />
-          <br></br>
-          <img width="600px" src="static/images/fig3-1.png" alt="cmp" />
+          <div class="content has-text-justified">
+            <img width="1200px" src="static/images/case-1.png" alt="cmp" />
+            <p>
+              \(\mathbf{\text{ED}}\) vs. baselines on a unsafe query. The \(\mathbf{\text{ED}}\) response contains harmful generalizations and personal biases that oversimplify historical complexities and can incite division. The \(\mathbf{\text{ED}_{\text{w/o align}}}\) response exhibits animosity towards animals without directly harming humans. Both \(\mathbf{\text{Base}_{\text{MP}}}\) and \(\mathbf{\text{Align}_{\text{MP}}}\) responses, despite being prompted for malicious content, provide harmless answers to the query. Only the \(\mathbf{\text{ED}}\) response is deemed harmful by evaluators.
+            </p>
+            <br></br>
+            <img width="1200px" src="static/images/case-2.png" alt="cmp" />
+            <p>
+              \(\mathbf{\text{ED}}\) vs. baselines on a unsafe query. The ED response shifts from a personal desire to live in an abandoned building to discussing serious and sensitive issues related to race, safety, and justice. Meanwhile, \(\mathbf{\text{ED}_{\text{w/o align}}}\) provides a straightforward description of abandoned buildings and their typical states of disrepair. Both \(\mathbf{\text{Base}_{\text{MP}}}\) and \(\mathbf{\text{Align}_{\text{MP}}}\) also directly address the query with informative responses regarding the nature and implications of abandoned buildings, free from harmful content. Only the ED response is flagged for problematic content, despite its initial relevance to the query.
+            </p>
+          </div>
         </div>
       </div>
     </div>
