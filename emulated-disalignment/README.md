@@ -4,7 +4,7 @@
 
 - arXiv: [arxiv.org/abs/2402.12343](https://arxiv.org/pdf/2402.12343.pdf)
 
-- Project Page: [disalignment.github.io/](https://disalignment.github.io/)
+- Project Page: [disalignment.github.io/](https://zhziszz.github.io/emulated-disalignment)
 
 - Code: [github.com/ZHZisZZ/emulated-disalignment](https://github.com/ZHZisZZ/emulated-disalignment)
 
