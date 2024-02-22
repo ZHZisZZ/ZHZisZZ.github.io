@@ -170,10 +170,10 @@
           <div class="content has-text-justified">
             <p>
               Large language models (LLMs) need to undergo safety alignment to ensure safe
-conversations with humans. However, in this work, we introduce an inference time attack framework, demonstrating that safety alignment can also unintentionally facilitate harmful outcomes under adversarial manipulation. <b>This framework,
+conversations with humans. However, in this work, we introduce an inference time attack framework, <b>demonstrating that safety alignment can also unintentionally facilitate harmful outcomes under adversarial manipulation</b>. This framework,
 named Emulated Disalignment (ED), adversely combines a pair of open-source
 pre-trained and safety-aligned language models in the output space to produce a
-harmful language model without any training.</b> Our experiments with ED across
+harmful language model without additional training. Our experiments with ED across
 three datasets and four model families (Llama-1, Llama-2, Mistral, and Alpaca)
 show that ED doubles the harmfulness of pre-trained models and outperforms
 strong baselines, achieving <span><b>the highest harmful rate</b> in 43 out of 48 evaluation subsets by a large margin. Crucially, our findings highlight the importance of <span><b>reevaluating the practice of open-sourcing language models even after safety alignment</b>.
@@ -197,7 +197,7 @@ strong baselines, achieving <span><b>the highest harmful rate</b> in 43 out of 4
           <div class="content has-text-justified">
             <!-- <img src="static/images/fig1.png" alt="MY ALT TEXT" /> -->
             <p>
-            Here is an illustration of <b>emulated disalignment (ED)</b>, where \(x\), \(y\) represent user query and language model response; \(\pi_{\text{base}}\) represents a pre-trained model (e.g. Llama-2) and \(\pi_{\text{align}}\) represents its
+            Here is an illustration of emulated disalignment (ED), where \(x\), \(y\) represent user query and language model response; \(\pi_{\text{base}}\) represents a pre-trained model (e.g. Llama-2) and \(\pi_{\text{align}}\) represents its
 safety-aligned version (e.g. Llama-2-chat); \(\alpha\) is a positive hyperparameter:
             </p>
             <div style="display: flex; justify-content: center; align-items: center;">
@@ -233,7 +233,7 @@ safety-aligned version (e.g. Llama-2-chat); \(\alpha\) is a positive hyperparame
           <h2 class="title is-3">Experiment</h2>
           <div class="content has-text-justified">
             <p>
-              The table below shows the harmful rate (%) of language model responses across different model families, datasets, and evaluators. The <b>emulated disaligned models</b> consistently generate harmful responses, achieving the highest harmful rate in the majority of evaluation subsets (43 out of 48). Please refer to our paper for definitions of baselines (\(\mathbf{\text{Base}_{\text{MP}}}\), \(\mathbf{\text{Align}_{\text{MP}}}\), \(\mathbf{\text{ED}_{\text{w/o align}}}\)).
+              The table below shows the harmful rate (%) of language model responses across different model families, datasets, and evaluators. The emulated disaligned models consistently generate harmful responses, achieving the highest harmful rate in the majority of evaluation subsets (43 out of 48). Please refer to our paper for definitions of baselines (\(\mathbf{\text{Base}_{\text{MP}}}\), \(\mathbf{\text{Align}_{\text{MP}}}\), \(\mathbf{\text{ED}_{\text{w/o align}}}\)).
             </p>
             <div style="text-align:center;">
               <img width="1200" src="static/images/table1.png" alt="MY ALT TEXT" />
@@ -265,7 +265,7 @@ safety-aligned version (e.g. Llama-2-chat); \(\alpha\) is a positive hyperparame
             <br></br>
             <img width="1200px" src="static/images/case-2.png" alt="cmp" />
             <p>
-              \(\mathbf{\text{ED}}\) vs. baselines on a unsafe query. The ED response shifts from a personal desire to live in an abandoned building to discussing serious and sensitive issues related to race, safety, and justice. Meanwhile, \(\mathbf{\text{ED}_{\text{w/o align}}}\) provides a straightforward description of abandoned buildings and their typical states of disrepair. Both \(\mathbf{\text{Base}_{\text{MP}}}\) and \(\mathbf{\text{Align}_{\text{MP}}}\) also directly address the query with informative responses regarding the nature and implications of abandoned buildings, free from harmful content. Only the ED response is flagged for problematic content, despite its initial relevance to the query.
+              \(\mathbf{\text{ED}}\) vs. baselines on a unsafe query. The \(\mathbf{\text{ED}}\) response shifts from a personal desire to live in an abandoned building to discussing serious and sensitive issues related to race, safety, and justice. Meanwhile, \(\mathbf{\text{ED}_{\text{w/o align}}}\) provides a straightforward description of abandoned buildings and their typical states of disrepair. Both \(\mathbf{\text{Base}_{\text{MP}}}\) and \(\mathbf{\text{Align}_{\text{MP}}}\) also directly address the query with informative responses regarding the nature and implications of abandoned buildings, free from harmful content. Only the \(\mathbf{\text{ED}}\) response is flagged for problematic content, despite its initial relevance to the query.
             </p>
           </div>
         </div>
