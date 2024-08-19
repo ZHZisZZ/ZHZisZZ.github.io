@@ -2,15 +2,13 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zhanhui Zhou</title>
 
-  <!-- <link rel="stylesheet" href="style.css" /> -->
-  <!-- <link rel="stylesheet" href="prism/prism.css" /> -->
+  <!-- Minimum HTML style -->
   <link rel="stylesheet" href="https://latex.vercel.app/style.min.css" />
   <link rel="stylesheet" href="https://latex.vercel.app/prism/prism.css" />
-
   <style>
     body {
       max-width: 100ch;
@@ -49,6 +47,25 @@
         color: #007bff;
     }
   </style>
+
+  <!-- expansion -->
+  <style>
+    .expandable {cursor: pointer;}
+
+    .content {display: none;}
+
+    .expandable.active + .content {display: block;}
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var expandables = document.querySelectorAll('.expandable');
+        expandables.forEach(function(expandable) {
+            expandable.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+    });
+  </script>
 </head>
 
 <body id="top">
@@ -75,7 +92,7 @@
 
   <div class="about">
     <p>
-      I work on alignment for generative models and AI safety. 
+      I work on generative model alignment and AI safety. 
       I hold dual bachelor's degrees from <a href="https://eecs.engin.umich.edu/">UMich</a> 
       and <a href="https://en.sjtu.edu.cn/">SJTU</a>.
       Feel free to reach out for collaboration or mentoring.
@@ -85,18 +102,16 @@
 
   <main>
     <article>
-
-      <h2>Preprints</h2>
-      <div style="margin-bottom: 15px;">
-        <b>Weak-to-Strong Search: Align Large Language Models via Searching over Small Language Models</b><br>
-        <b>Zhanhui Zhou</b>, Zhixuan Liu, Jie Liu, Zhichen Dong, Chao Yang, Yu Qiao.<br>
-        <a href="https://arxiv.org/abs/2405.19262">PDF</a>&nbsp<a href="https://github.com/ZHZisZZ/weak-to-strong-search">CODE</a>
-      </div>
       
 
       <h2>Selected Publications</h2>
       <font color="grey">Please see <a href="https://scholar.google.com/citations?user=SbACfYQAAAAJ&hl=zh-CN" style="color: grey;">Google Scholar</a> for a complete and up-to-date list of publications </font><br>
-
+      <div style="margin-bottom: 15px;">
+        <b>Weak-to-Strong Search: Align Large Language Models via Searching over Small Language Models</b><br>
+        <b>Zhanhui Zhou</b>, Zhixuan Liu, Jie Liu, Zhichen Dong, Chao Yang, Yu Qiao.<br>
+        Preprint<br>
+        <a href="https://arxiv.org/abs/2405.19262">PDF</a>&nbsp<a href="https://github.com/ZHZisZZ/weak-to-strong-search">CODE</a>
+      </div>
       <div style="margin-bottom: 15px;">
         <b>Emulated Disalignment: Safety Alignment for Large Langugae Models May Backfire!</b><br>
         <b>Zhanhui Zhou</b>, Jie Liu, Zhichen Dong, Jiaheng Liu, Chao Yang, Wanli Ouyang, Yu Qiao.<br>
@@ -114,6 +129,22 @@
         <b>Zhanhui Zhou<sup>*</sup></b>, Man To Tang<sup>*</sup>, Qiping Pan<sup>*</sup>, Shangyin Tan, Xinyu Wang, Tianyi Zhang.<br>
         UIST'22<br>
         <a href="https://dl.acm.org/doi/abs/10.1145/3526113.3545653">PDF</a>&nbsp<a href="https://github.com/ZHZisZZ/INTENT">CODE</a>
+      </div>
+
+      <div class="expandable">See all ▼</div>
+      <div class="content">
+        <div style="margin-bottom: 15px;">
+          <b>MT-Bench-101: A Fine-Grained Benchmark for Evaluating Large Language Models in Multi-Turn Dialogues</b><br>
+          Ge Bai, Jie Liu, Xingyuan Bu, Yancheng He, Jiaheng Liu, <b>Zhanhui Zhou</b>, Zhuoran Lin, Wenbo Su, Tiezheng Ge, Bo Zheng, Wanli Ouyang.<br>
+          ACL'24</b><br>
+          <a href="https://arxiv.org/abs/2402.14762">PDF</a>&nbsp<a href="https://github.com/mtbench101/mt-bench-101">CODE</a>
+        </div>
+        <div style="margin-bottom: 15px;">
+          <b>ConceptMath: A Bilingual Concept-wise Benchmark for Measuring Mathematical Reasoning of Large Language Models</b><br>
+          Yanan Wu, Jie Liu, Xingyuan Bu, Jiaheng Liu, <b>Zhanhui Zhou</b>, Yuanxing Zhang, Chenchen Zhang, Zhiqi Bai, Haibin Chen, Tiezheng Ge, Wanli Ouyang, Wenbo Su, Bo Zheng.<br>
+          Findings of ACL'24<br>
+          <a href="https://arxiv.org/abs/2402.14660">PDF</a>&nbsp<a href="https://github.com/conceptmath/conceptmath">CODE</a>
+        </div>
       </div>
     </article>
   </main>
